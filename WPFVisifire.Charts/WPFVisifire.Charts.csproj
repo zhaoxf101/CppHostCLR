@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{26253A44-8E01-4B86-ADD2-404784D2390A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>WPFVisifire.Charts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InteractivityHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visifire.Charts.Properties\Resources.cs" />
+    <Compile Include="Visifire.Charts.Properties\Settings.cs" />
+    <Compile Include="Visifire.Charts\Area3DDataPointFace.cs" />
+    <Compile Include="Visifire.Charts\AreaChart.cs" />
+    <Compile Include="Visifire.Charts\Axis.cs" />
+    <Compile Include="Visifire.Charts\AxisCollection.cs" />
+    <Compile Include="Visifire.Charts\AxisLabel.cs" />
+    <Compile Include="Visifire.Charts\AxisLabelData.cs" />
+    <Compile Include="Visifire.Charts\AxisLabels.cs" />
+    <Compile Include="Visifire.Charts\AxisManager.cs" />
+    <Compile Include="Visifire.Charts\AxisOrientation.cs" />
+    <Compile Include="Visifire.Charts\AxisRenderManager.cs" />
+    <Compile Include="Visifire.Charts\AxisRepresentations.cs" />
+    <Compile Include="Visifire.Charts\AxisScrollEventArgs.cs" />
+    <Compile Include="Visifire.Charts\AxisTypes.cs" />
+    <Compile Include="Visifire.Charts\AxisZoomEventArgs.cs" />
+    <Compile Include="Visifire.Charts\BarChart.cs" />
+    <Compile Include="Visifire.Charts\Bezier.cs" />
+    <Compile Include="Visifire.Charts\BubbleChart.cs" />
+    <Compile Include="Visifire.Charts\BubbleStyles.cs" />
+    <Compile Include="Visifire.Charts\CandleStick.cs" />
+    <Compile Include="Visifire.Charts\Chart.cs" />
+    <Compile Include="Visifire.Charts\ChartArea.cs" />
+    <Compile Include="Visifire.Charts\ChartGrid.cs" />
+    <Compile Include="Visifire.Charts\ChartGridCollection.cs" />
+    <Compile Include="Visifire.Charts\ChartOrientationType.cs" />
+    <Compile Include="Visifire.Charts\ChartValueTypes.cs" />
+    <Compile Include="Visifire.Charts\CircularAxisLabel.cs" />
+    <Compile Include="Visifire.Charts\CircularPlotDetails.cs" />
+    <Compile Include="Visifire.Charts\ColorSet.cs" />
+    <Compile Include="Visifire.Charts\ColorSets.cs" />
+    <Compile Include="Visifire.Charts\ColumnChart.cs" />
+    <Compile Include="Visifire.Charts\CustomAxisLabel.cs" />
+    <Compile Include="Visifire.Charts\CustomAxisLabelCollection.cs" />
+    <Compile Include="Visifire.Charts\CustomAxisLabels.cs" />
+    <Compile Include="Visifire.Charts\CustomAxisLabelsCollection.cs" />
+    <Compile Include="Visifire.Charts\DataMapping.cs" />
+    <Compile Include="Visifire.Charts\DataMappingCollection.cs" />
+    <Compile Include="Visifire.Charts\DataPoint.cs" />
+    <Compile Include="Visifire.Charts\DataPointCollection.cs" />
+    <Compile Include="Visifire.Charts\DataPointHelper.cs" />
+    <Compile Include="Visifire.Charts\DataPointPropertyChangedEventArgs.cs" />
+    <Compile Include="Visifire.Charts\DataSeries.cs" />
+    <Compile Include="Visifire.Charts\DataSeriesCollection.cs" />
+    <Compile Include="Visifire.Charts\DateTimeHelper.cs" />
+    <Compile Include="Visifire.Charts\DpFunc.cs" />
+    <Compile Include="Visifire.Charts\DpInfo.cs" />
+    <Compile Include="Visifire.Charts\DragEventArgs.cs" />
+    <Compile Include="Visifire.Charts\ElementData.cs" />
+    <Compile Include="Visifire.Charts\ElementPositionData.cs" />
+    <Compile Include="Visifire.Charts\Elements.cs" />
+    <Compile Include="Visifire.Charts\ElementStyle.cs" />
+    <Compile Include="Visifire.Charts\ElementTypes.cs" />
+    <Compile Include="Visifire.Charts\ExportType.cs" />
+    <Compile Include="Visifire.Charts\ExtendedGraphics.cs" />
+    <Compile Include="Visifire.Charts\Face3DType.cs" />
+    <Compile Include="Visifire.Charts\Faces.cs" />
+    <Compile Include="Visifire.Charts\FillType.cs" />
+    <Compile Include="Visifire.Charts\FunnelChart.cs" />
+    <Compile Include="Visifire.Charts\IDataPoint.cs" />
+    <Compile Include="Visifire.Charts\IDataPointParentSetter.cs" />
+    <Compile Include="Visifire.Charts\InlinesCollection.cs" />
+    <Compile Include="Visifire.Charts\IntervalTypes.cs" />
+    <Compile Include="Visifire.Charts\IOValuePair.cs" />
+    <Compile Include="Visifire.Charts\IToolTip.cs" />
+    <Compile Include="Visifire.Charts\LabelStyles.cs" />
+    <Compile Include="Visifire.Charts\Layouts.cs" />
+    <Compile Include="Visifire.Charts\Legend.cs" />
+    <Compile Include="Visifire.Charts\LegendCollection.cs" />
+    <Compile Include="Visifire.Charts\LegendEntry.cs" />
+    <Compile Include="Visifire.Charts\LegendMouseButtonEventArgs.cs" />
+    <Compile Include="Visifire.Charts\LegendMouseEventArgs.cs" />
+    <Compile Include="Visifire.Charts\LightDataPoint.cs" />
+    <Compile Include="Visifire.Charts\LineChart.cs" />
+    <Compile Include="Visifire.Charts\LineChartShapeParams.cs" />
+    <Compile Include="Visifire.Charts\LineStructure.cs" />
+    <Compile Include="Visifire.Charts\LineStyles.cs" />
+    <Compile Include="Visifire.Charts\MantissaOrExponent.cs" />
+    <Compile Include="Visifire.Charts\OCHL.cs" />
+    <Compile Include="Visifire.Charts\PanningMode.cs" />
+    <Compile Include="Visifire.Charts\PartialUpdateConfiguration.cs" />
+    <Compile Include="Visifire.Charts\PieChart.cs" />
+    <Compile Include="Visifire.Charts\PieDoughnut2DPoints.cs" />
+    <Compile Include="Visifire.Charts\PieDoughnut3DPoints.cs" />
+    <Compile Include="Visifire.Charts\PieDoughnutPoints.cs" />
+    <Compile Include="Visifire.Charts\PlacementTypes.cs" />
+    <Compile Include="Visifire.Charts\PlotArea.cs" />
+    <Compile Include="Visifire.Charts\PlotAreaMouseButtonEventArgs.cs" />
+    <Compile Include="Visifire.Charts\PlotAreaMouseEventArgs.cs" />
+    <Compile Include="Visifire.Charts\PlotDetails.cs" />
+    <Compile Include="Visifire.Charts\PlotGroup.cs" />
+    <Compile Include="Visifire.Charts\Point3D.cs" />
+    <Compile Include="Visifire.Charts\PointChart.cs" />
+    <Compile Include="Visifire.Charts\PolarChart.cs" />
+    <Compile Include="Visifire.Charts\PolygonalChartShapeParams.cs" />
+    <Compile Include="Visifire.Charts\PropertyValuePair.cs" />
+    <Compile Include="Visifire.Charts\PyramidChart.cs" />
+    <Compile Include="Visifire.Charts\QuickLineChart.cs" />
+    <Compile Include="Visifire.Charts\RadarChart.cs" />
+    <Compile Include="Visifire.Charts\RasterLineStyle.cs" />
+    <Compile Include="Visifire.Charts\RasterMarkerStyle.cs" />
+    <Compile Include="Visifire.Charts\RasterRenderEngine.cs" />
+    <Compile Include="Visifire.Charts\RasterShapeStyle.cs" />
+    <Compile Include="Visifire.Charts\RectangularChartShapeParams.cs" />
+    <Compile Include="Visifire.Charts\RenderAs.cs" />
+    <Compile Include="Visifire.Charts\RenderHelper.cs" />
+    <Compile Include="Visifire.Charts\RenderHelperInfo.cs" />
+    <Compile Include="Visifire.Charts\SamplingFunction.cs" />
+    <Compile Include="Visifire.Charts\ScaleDirection.cs" />
+    <Compile Include="Visifire.Charts\SectorChartShapeParams.cs" />
+    <Compile Include="Visifire.Charts\SelectionModes.cs" />
+    <Compile Include="Visifire.Charts\SortDataPoints.cs" />
+    <Compile Include="Visifire.Charts\StepLineChart.cs" />
+    <Compile Include="Visifire.Charts\StepLineChartShapeParams.cs" />
+    <Compile Include="Visifire.Charts\StockChart.cs" />
+    <Compile Include="Visifire.Charts\Theme.cs" />
+    <Compile Include="Visifire.Charts\ThemeCollection.cs" />
+    <Compile Include="Visifire.Charts\Ticks.cs" />
+    <Compile Include="Visifire.Charts\TicksCollection.cs" />
+    <Compile Include="Visifire.Charts\Title.cs" />
+    <Compile Include="Visifire.Charts\TitleCollection.cs" />
+    <Compile Include="Visifire.Charts\ToolTip.cs" />
+    <Compile Include="Visifire.Charts\ToolTipCollection.cs" />
+    <Compile Include="Visifire.Charts\TrendLine.cs" />
+    <Compile Include="Visifire.Charts\TrendLineCollection.cs" />
+    <Compile Include="Visifire.Charts\TriangularChartSliceParms.cs" />
+    <Compile Include="Visifire.Charts\VcProperties.cs" />
+    <Compile Include="Visifire.Charts\XWiseStackedData.cs" />
+    <Compile Include="Visifire.Charts\ZoomingAction.cs" />
+    <Compile Include="Visifire.Charts\ZoomingMode.cs" />
+    <Compile Include="Visifire.Charts\ZoomingPanningEventHandler.cs" />
+    <Compile Include="Visifire.Commons.Controls\WeakEventListener.cs" />
+    <Compile Include="Visifire.Commons.Controls\ZoomBar.cs" />
+    <Compile Include="Visifire.Commons\AnimationHelper.cs" />
+    <Compile Include="Visifire.Commons\BorderStyles.cs" />
+    <Compile Include="Visifire.Commons\CircularLabel.cs" />
+    <Compile Include="Visifire.Commons\Converters.cs" />
+    <Compile Include="Visifire.Commons\DataSamplingHelper.cs" />
+    <Compile Include="Visifire.Commons\Graphics.cs" />
+    <Compile Include="Visifire.Commons\HrefTargets.cs" />
+    <Compile Include="Visifire.Commons\IElement.cs" />
+    <Compile Include="Visifire.Commons\IEvent.cs" />
+    <Compile Include="Visifire.Commons\IHref.cs" />
+    <Compile Include="Visifire.Commons\LabelPlacementHelper.cs" />
+    <Compile Include="Visifire.Commons\Marker.cs" />
+    <Compile Include="Visifire.Commons\MarkerTypes.cs" />
+    <Compile Include="Visifire.Commons\ObservableObject.cs" />
+    <Compile Include="Visifire.Commons\OverlapTypes.cs" />
+    <Compile Include="Visifire.Commons\PieFaceTypes.cs" />
+    <Compile Include="Visifire.Commons\PointComparer.cs" />
+    <Compile Include="Visifire.Commons\VisifireControl.cs" />
+    <Compile Include="Visifire.Commons\VisifireElement.cs" />
+    <Compile Include="Visifire.Commons\WriteableBitmapAdapter.cs" />
+    <Compile Include="Visifire.Commons\WriteableBitmapAdapterExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="chartbackground.png" />
+    <EmbeddedResource Include="Visifire.Charts\ColorSets.xaml" />
+    <EmbeddedResource Include="Visifire.Charts\cursor_drag_hand.png" />
+    <EmbeddedResource Include="Visifire.Charts\print_icon.png" />
+    <EmbeddedResource Include="Visifire.Charts\save_icon.png" />
+    <EmbeddedResource Include="Visifire.Charts\Theme1.xaml" />
+    <EmbeddedResource Include="Visifire.Charts\Theme2.xaml" />
+    <EmbeddedResource Include="Visifire.Charts\Theme3.xaml" />
+    <EmbeddedResource Include="Visifire.Charts\Theme4.xaml" />
+    <EmbeddedResource Include="Visifire.Charts\Theme5.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="themes\generic.xaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
