@@ -691,17 +691,13 @@ namespace Visifire.Charts
 		{
 			if (this.Visual != null)
 			{
-				using (IEnumerator enumerator = this.Visual.Children.GetEnumerator())
-				{
-					while (enumerator.MoveNext())
-					{
-						Line line = (Line)enumerator.Current;
-						line.Stroke = this.LineColor;
-						line.StrokeThickness = this.LineThickness;
-						line.StrokeDashArray = ExtendedGraphics.GetDashArray(this.LineStyle);
-					}
-					return;
-				}
+                foreach (Line line in Visual.Children)
+                {
+                    line.Stroke = this.LineColor;
+                    line.StrokeThickness = this.LineThickness;
+                    line.StrokeDashArray = ExtendedGraphics.GetDashArray(this.LineStyle);
+                }
+                return;
 			}
 			base.FirePropertyChanged(property);
 		}

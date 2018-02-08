@@ -524,7 +524,6 @@ namespace Visifire.Charts
 			{
 				num7 = (decimal)Math.Pow(this.LogarithmicBase, 0.0);
 			}
-			(double)num7;
 			this._axisMaximumValue = (decimal)Math.Log((double)num6, this.LogarithmicBase);
 			this._axisMinimumValue = (decimal)Math.Log((double)num7, this.LogarithmicBase);
 			if (!this._overrideInterval)

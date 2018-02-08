@@ -3626,33 +3626,31 @@ namespace Visifire.Charts
 				{
 					goto IL_375;
 				}
-				using (IEnumerator enumerator = e.NewItems.GetEnumerator())
-				{
-					while (enumerator.MoveNext())
-					{
-						IDataPoint dataPoint = (IDataPoint)enumerator.Current;
-						((IDataPointParentSetter)dataPoint).Parent = this;
-						dataPoint.DpInfo.LightWeight = this.LightWeight.Value;
-						if (base.Chart != null)
-						{
-							dataPoint.Chart = base.Chart;
-						}
-						if (!dataPoint.IsLightDataPoint)
-						{
-							bool selectionEnabled = this.SelectionEnabled;
-							DataPointHelper.AttachEventForSelection(dataPoint, selectionEnabled);
-						}
-						if (!dataPoint.DpInfo.LightWeight)
-						{
-							dataPoint.PropertyChanged -= new PropertyChangedEventHandler(this.DataPoint_PropertyChanged);
-							dataPoint.PropertyChanged += new PropertyChangedEventHandler(this.DataPoint_PropertyChanged);
-							DataPointHelper.BindStyleAttribute(dataPoint);
-							DataPointHelper.AttachEventChanged(dataPoint);
-							this.AddDataPointToRootElement(dataPoint);
-						}
-					}
-					goto IL_375;
-				}
+
+                foreach (IDataPoint dataPoint in e.NewItems)
+                {
+                    ((IDataPointParentSetter)dataPoint).Parent = this;
+                    dataPoint.DpInfo.LightWeight = this.LightWeight.Value;
+                    if (base.Chart != null)
+                    {
+                        dataPoint.Chart = base.Chart;
+                    }
+                    if (!dataPoint.IsLightDataPoint)
+                    {
+                        bool selectionEnabled = this.SelectionEnabled;
+                        DataPointHelper.AttachEventForSelection(dataPoint, selectionEnabled);
+                    }
+                    if (!dataPoint.DpInfo.LightWeight)
+                    {
+                        dataPoint.PropertyChanged -= new PropertyChangedEventHandler(this.DataPoint_PropertyChanged);
+                        dataPoint.PropertyChanged += new PropertyChangedEventHandler(this.DataPoint_PropertyChanged);
+                        DataPointHelper.BindStyleAttribute(dataPoint);
+                        DataPointHelper.AttachEventChanged(dataPoint);
+                        this.AddDataPointToRootElement(dataPoint);
+                    }
+                }
+
+                goto IL_375;
 			}
 			if (e.Action == NotifyCollectionChangedAction.Reset)
 			{
@@ -3704,30 +3702,27 @@ namespace Visifire.Charts
 					{
 						goto IL_375;
 					}
-					using (IEnumerator enumerator5 = e.OldItems.GetEnumerator())
-					{
-						while (enumerator5.MoveNext())
-						{
-							IDataPoint dataPoint4 = (IDataPoint)enumerator5.Current;
-							if (dataPoint4.Parent != null)
-							{
-								DataSeries parent = dataPoint4.Parent;
-								parent.InternalDataPoints.Remove(dataPoint4);
-							}
-							dataPoint4.PropertyChanged -= new PropertyChangedEventHandler(this.DataPoint_PropertyChanged);
-							DataPointHelper.DetachEventForSelection(dataPoint4);
-							this.RemoveVisualElementsFromTree(dataPoint4, true);
-							if (!this.LightWeight.Value && this._rootElement != null)
-							{
-								DataPoint dataPoint5 = dataPoint4 as DataPoint;
-								if (dataPoint5 != null)
-								{
-									ObservableObject.RemoveElementFromElementTree(dataPoint5);
-								}
-							}
-						}
-						goto IL_375;
-					}
+
+                    foreach (IDataPoint dataPoint4 in e.OldItems)
+                    {
+                        if (dataPoint4.Parent != null)
+                        {
+                            DataSeries parent = dataPoint4.Parent;
+                            parent.InternalDataPoints.Remove(dataPoint4);
+                        }
+                        dataPoint4.PropertyChanged -= new PropertyChangedEventHandler(this.DataPoint_PropertyChanged);
+                        DataPointHelper.DetachEventForSelection(dataPoint4);
+                        this.RemoveVisualElementsFromTree(dataPoint4, true);
+                        if (!this.LightWeight.Value && this._rootElement != null)
+                        {
+                            DataPoint dataPoint5 = dataPoint4 as DataPoint;
+                            if (dataPoint5 != null)
+                            {
+                                ObservableObject.RemoveElementFromElementTree(dataPoint5);
+                            }
+                        }
+                    }
+                    goto IL_375;
 				}
 				if (e.Action == NotifyCollectionChangedAction.Replace && e.NewItems != null)
 				{

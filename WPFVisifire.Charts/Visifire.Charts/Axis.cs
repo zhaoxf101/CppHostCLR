@@ -5199,26 +5199,23 @@ namespace Visifire.Charts
 		{
 			if (e.Action == NotifyCollectionChangedAction.Add)
 			{
-				if (e.NewItems == null)
-				{
-					goto IL_FE;
-				}
-				using (IEnumerator enumerator = e.NewItems.GetEnumerator())
-				{
-					while (enumerator.MoveNext())
-					{
-						CustomAxisLabels customAxisLabels = (CustomAxisLabels)enumerator.Current;
-						if (base.Chart != null)
-						{
-							customAxisLabels.Chart = base.Chart;
-						}
-						customAxisLabels.Parent = this;
-						customAxisLabels.PropertyChanged -= new PropertyChangedEventHandler(this.customLabels_PropertyChanged);
-						customAxisLabels.PropertyChanged += new PropertyChangedEventHandler(this.customLabels_PropertyChanged);
-						this.AddCustomAxisLabelsToRootElement(customAxisLabels);
-					}
-					goto IL_FE;
-				}
+                if (e.NewItems == null)
+                {
+                    goto IL_FE;
+                }
+
+                foreach (CustomAxisLabels customAxisLabels in e.NewItems)
+                {
+                    if (base.Chart != null)
+                    {
+                        customAxisLabels.Chart = base.Chart;
+                    }
+                    customAxisLabels.Parent = this;
+                    customAxisLabels.PropertyChanged -= new PropertyChangedEventHandler(this.customLabels_PropertyChanged);
+                    customAxisLabels.PropertyChanged += new PropertyChangedEventHandler(this.customLabels_PropertyChanged);
+                    this.AddCustomAxisLabelsToRootElement(customAxisLabels);
+                }
+                goto IL_FE;
 			}
 			if (e.Action == NotifyCollectionChangedAction.Remove)
 			{

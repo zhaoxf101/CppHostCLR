@@ -489,7 +489,7 @@ namespace Visifire.Commons
 			uint num2 = num >> 24;
 			uint num3 = num >> 8 & 255u;
 			uint num4 = num & 16711935u;
-			pixels[index] = (int)((long)sa + (long)((ulong)num2 * (ulong)((long)(255 - sa)) * 32897uL >> 23) << 24 | (long)((ulong)(sg - num3) * (ulong)((long)sa) + (ulong)((ulong)num3 << 8) & (ulong)-256) | (long)(((ulong)(srb - num4) * (ulong)((long)sa) >> 8) + (ulong)num4 & 16711935uL));
+			pixels[index] = (int)((long)sa + (long)((ulong)num2 * (ulong)((long)(255 - sa)) * 32897uL >> 23) << 24 | (long)((ulong)(sg - num3) * (ulong)((long)sa) + (ulong)((ulong)num3 << 8) & unchecked((ulong)-256)) | (long)(((ulong)(srb - num4) * (ulong)((long)sa) >> 8) + (ulong)num4 & 16711935uL));
 		}
 
 		public static void DrawPolyline(this WriteableBitmapAdapter bmp, int[] points, Color color)

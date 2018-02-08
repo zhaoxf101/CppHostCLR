@@ -1343,14 +1343,16 @@ namespace Visifire.Charts
 			DataPointHelper.OnRadiusYPropertyChanged(d as IDataPoint, new DataPointPropertyChangedEventArgs(e, VcProperties.RadiusY));
 		}
 
-		object IDataPoint.get_DataContext()
-		{
-			return base.DataContext;
-		}
-
-		void IDataPoint.set_DataContext(object A_1)
-		{
-			base.DataContext = A_1;
-		}
+        object IDataPoint.DataContext
+        {
+            get
+            {
+                return DataContext;
+            }
+            set
+            {
+                DataContext = value;
+            }
+        }
 	}
 }

@@ -715,26 +715,25 @@ namespace Visifire.Charts
 				{
 					goto IL_15A;
 				}
-				using (IEnumerator enumerator = e.NewItems.GetEnumerator())
-				{
-					while (enumerator.MoveNext())
-					{
-						CustomAxisLabel customAxisLabel = (CustomAxisLabel)enumerator.Current;
-						customAxisLabel.Parent = this;
-						if (base.Chart != null)
-						{
-							customAxisLabel.Chart = base.Chart;
-						}
-						if (string.IsNullOrEmpty((string)customAxisLabel.GetValue(FrameworkElement.NameProperty)))
-						{
-							customAxisLabel.Name = "CustomAxisLabel" + (this.Labels.Count - 1).ToString() + "_" + Guid.NewGuid().ToString().Replace('-', '_');
-						}
-						customAxisLabel.PropertyChanged -= new PropertyChangedEventHandler(this.CustomLabel_PropertyChanged);
-						customAxisLabel.PropertyChanged += new PropertyChangedEventHandler(this.CustomLabel_PropertyChanged);
-						this.AddCustomAxisLabelToRootElement(customAxisLabel);
-					}
-					goto IL_15A;
-				}
+
+                foreach (CustomAxisLabel customAxisLabel in e.NewItems)
+                {
+                    customAxisLabel.Parent = this;
+                    if (base.Chart != null)
+                    {
+                        customAxisLabel.Chart = base.Chart;
+                    }
+                    if (string.IsNullOrEmpty((string)customAxisLabel.GetValue(FrameworkElement.NameProperty)))
+                    {
+                        customAxisLabel.Name = "CustomAxisLabel" + (this.Labels.Count - 1).ToString() + "_" + Guid.NewGuid().ToString().Replace('-', '_');
+                    }
+                    customAxisLabel.PropertyChanged -= new PropertyChangedEventHandler(this.CustomLabel_PropertyChanged);
+                    customAxisLabel.PropertyChanged += new PropertyChangedEventHandler(this.CustomLabel_PropertyChanged);
+                    this.AddCustomAxisLabelToRootElement(customAxisLabel);
+                }
+
+                goto IL_15A;
+                
 			}
 			if (e.Action == NotifyCollectionChangedAction.Remove)
 			{
